@@ -28,10 +28,11 @@ module.exports = function(app, db) {
   // make transaction
   app.post('/checkout', (req, res) => {
     var nonceFromTheClient = req.body.payment_method_nonce;
+    var amountFromTheClient = req.body.amount;
     // THEN MAKE a transaction
     console.log('into transaction')
     gateway.transaction.sale({
-      amount: '10',
+      amount: amountFromTheClient,
       paymentMethodNonce: nonceFromTheClient,
       options: {
         submitForSettlement: true
@@ -39,7 +40,7 @@ module.exports = function(app, db) {
     }, (err, result) => {
       if (err) {
         console.log("There was a error")
-      } else { 
+      } else {
         console.log("Success checkout")
         res.send(result);
       }
