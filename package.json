@@ -1,0 +1,21 @@
+{
+  "name": "nodebraintreeserver",
+  "version": "1.0.0",
+  "description": "this is node braintree server by node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "server for braintree by node js",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Thuc",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
